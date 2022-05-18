@@ -20,6 +20,10 @@
 	
 
 //[SECTION] Server Gateway Respose
+	app.get('/', (req, res) => {
+		res.send('Welcome to Enrollment-System')
+	});
+
 	app.listen(port, () => {
 		console.log(`API is Hosted port ${port}`);
-	})
+	});
