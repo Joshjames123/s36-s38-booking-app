@@ -19,7 +19,7 @@
 	connectStatus.once('open', () => console.log(`Database Connected`));
 
 //[SECTION] Backend Routes
-	app.use(userRoutes);
+	app.use('/users', userRoutes); //we want to separate all concerns/endpoint pertaining to different collections in our detabase.
 
 //[SECTION] Server Gateway Respose
 	app.get('/', (req, res) => {

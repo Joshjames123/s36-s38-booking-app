@@ -9,6 +9,11 @@
 //[SECTIONS] Routes- POST
 	route.post('/register', (req, res) => {
 		console.log(req.body);
+		let userData = req.body;
+		//invoke the controller finction you wish to execute.
+		controller.register(userData).then(outcome => {
+			res.send(outcome)
+		})
 	});
 //[SECTIONS] Routes- GET
 //[SECTIONS] Routes- PUT
