@@ -1,5 +1,5 @@
 // [SECTION] Modules and Dependencies
-	const mongoose = require('mogoose');
+	const mongoose = require('mongoose');
 
 // [SECTION] Schema/Blueprint
 
