@@ -1,16 +1,15 @@
 //[SECTIONS] Dependencies and Modules
-	const exp = require('express'); // needed library to impliment a new route
-	const controller = require('../controller/users'); //controller component that holds all the business logic aspect of out app.
+	const exp = require('express');
+	const controller = require('../controller/users');
 
 //[SECTIONS] Routing Component
-	//implement a new routing system dedicated for the users collection.
 	const route = exp.Router();
 
 //[SECTIONS] Routes- POST
 	route.post('/register', (req, res) => {
 		console.log(req.body);
 		let userData = req.body;
-		//invoke the controller finction you wish to execute.
+		
 		controller.register(userData).then(outcome => {
 			res.send(outcome)
 		})

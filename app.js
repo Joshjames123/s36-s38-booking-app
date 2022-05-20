@@ -2,7 +2,7 @@
 	const express = require('express');
 	const mongoose = require('mongoose');
 	const dotenv = require('dotenv');
-	const userRoutes = require('./routes/users') //routing ststem users
+	const userRoutes = require('./routes/users')
 
 //[SECTION] Environment Setup
 	dotenv.config();
@@ -11,7 +11,7 @@
 
 //[SECTION] Server Setup
 	const app = express();
-	app.use(express.json()); //the app should be able to recognize data written in a json format.
+	app.use(express.json());
 	
 //[SECTION] Database Connection
 	mongoose.connect(account)
@@ -19,7 +19,7 @@
 	connectStatus.once('open', () => console.log(`Database Connected`));
 
 //[SECTION] Backend Routes
-	app.use('/users', userRoutes); //we want to separate all concerns/endpoint pertaining to different collections in our detabase.
+	app.use('/users', userRoutes);
 
 //[SECTION] Server Gateway Respose
 	app.get('/', (req, res) => {
