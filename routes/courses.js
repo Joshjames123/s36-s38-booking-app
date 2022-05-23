@@ -3,7 +3,6 @@ const route = express.Router();
 const CourseController = require('../controller/courses')
 const auth = require('../auth');
 
-//destructure the actual function that we need to use
 
 const { verify, verifyAdmin } = auth;
 
@@ -26,12 +25,8 @@ route.get('/active', (req, res) => {
 
 
 //Retriving a SECIFIC course
-//req.params (is short for a parameter)
-//" /:parameterName"
-
 route.get('/:courseId', (req, res) => {
 	console.log(req.params.courseId)
-	//we can retrive the course ID by accessing the request's "params" property which conttains all the parameters provided via the URL
 	CourseController.getCourse(req.params.courseId).then(result => res.send(result));
 })
 
