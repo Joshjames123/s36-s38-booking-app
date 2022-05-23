@@ -1,26 +1,26 @@
 //[SECTION] Dependencies and Module
-	const mongoose = required('mongoose');
+	const mongoose = require('mongoose');
 
 //[SECTION] Schema/Blueprint
 
 	const courseSchema = new mongoose.Schema({
-		name {
+		name: {
 			type: String,
 			required: [true, 'is Required']
 		},
-		description {
+		description: {
 			type: String,
 			required: [true, 'is Required']
 		},
-		price {
+		price: {
 			type:Number,
 			required: [true, 'Course Price is Required']
 		},
-		isActive {
+		isActive: {
 			type: Boolean,
 			default: true
 		},
-		createdOn {
+		createdOn: {
 			type: Date,
 			default: new Date()
 		},

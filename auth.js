@@ -7,6 +7,9 @@ const secret = 'CourseBookingAPI';
 
 module.exports.createAccessToken = (user) =>{
 
+
+module.exports.createAccessToken = (user) =>{
+
 	console.log(user);
 
 	const data = {
@@ -24,6 +27,8 @@ module.exports.createAccessToken = (user) =>{
 
 module.exports.verify = (req, res, next) => {
 
+
+module.exports.verify = (req, res, next) => {
 	console.log(req.headers.authorization)
 
 	let token = req.headers.authorization;
@@ -56,8 +61,18 @@ module.exports.verify = (req, res, next) => {
 
 
 
+module.exports.verifyAdmin = (req, res, next) => {
 
+	if(req.user.isAdmin) {
+		next();
+	} else {
+		return res.send({
+			auth: "Failed",
+			message: "Action Forbidden"
+		})
+	}
 
+}
 
 
 
