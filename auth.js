@@ -6,10 +6,6 @@ const secret = 'CourseBookingAPI';
 //Token Creation
 
 module.exports.createAccessToken = (user) =>{
-
-
-module.exports.createAccessToken = (user) =>{
-
 	console.log(user);
 
 	const data = {
@@ -19,7 +15,6 @@ module.exports.createAccessToken = (user) =>{
 	}
 
 	return jwt.sign(data, secret, {})
-
 }
 
 
@@ -27,8 +22,6 @@ module.exports.createAccessToken = (user) =>{
 
 module.exports.verify = (req, res, next) => {
 
-
-module.exports.verify = (req, res, next) => {
 	console.log(req.headers.authorization)
 
 	let token = req.headers.authorization;
@@ -51,15 +44,14 @@ module.exports.verify = (req, res, next) => {
 				req.user = decodedToken
 
 				next();
-
 			}
 		})
-
-
 	}
 }
 
 
+
+//verify an admin and will be used also as a middleware
 
 module.exports.verifyAdmin = (req, res, next) => {
 
