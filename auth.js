@@ -78,8 +78,22 @@ module.exports.verify = (req, res, next) => {
 
 
 
+//verify an admin and will be used also as a middleware
 
+module.exports.verifyAdmin = (req, res, next) => {
+	//we can get details from req.user because verifyAdmin comes after verify method.
+	//Note: You can only have req.user for any middleware or controller that comes after verify
+	if(req.user.isAdmin) {
+		//if the logged user, based on his token is an admin, we will proceed to the next middleware/controller.
+		next();
+	} else {
+		return res.send({
+			auth: "Failed",
+			message: "Action Forbidden"
+		})
+	}
 
+}
 
 
 
