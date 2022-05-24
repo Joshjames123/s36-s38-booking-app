@@ -59,7 +59,6 @@ module.exports.updateCourse = (courseId, data) => {
 		description: data.description,
 		price: data.price
 	}
-	//
 
 	return Course.findByIdAndUpdate(courseId, updatedCourse).then((course, error) => {
 		if(error){
@@ -69,3 +68,22 @@ module.exports.updateCourse = (courseId, data) => {
 		}
 	}).catch(error => error)
 }
+
+//Archiving a course
+//1. update the status of "isActive" into "false" which no longer be displayed in the client whenever all active courses are retrieved.
+module.exports.archiveCourse = (courseId) => {
+	let updateActiveField = {
+		isActive: false
+	};
+
+	return Course.findByIdAndUpdate(courseId, updateActiveField).then((course, error) => {
+
+			if(error){
+				return false;
+			} else {
+				return true;
+			}
+		}).catch(error => error)
+}
+
+

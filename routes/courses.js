@@ -38,9 +38,13 @@ route.put('/:courseId', verify, verifyAdmin, (req, res) => {
 })
 
 
+//Archiving a course
+route.put('/:courseId/archive', verify, verifyAdmin, (req, res) => {
+	CourseController.archiveCourse(req.params.courseId).then(result => res.send(result));
+})
 
 
-
+//
 
 
 

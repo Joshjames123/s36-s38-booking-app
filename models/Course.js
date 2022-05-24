@@ -26,7 +26,7 @@
 		},
 		enrollees: [
 			{
-				userID: {
+				userId: {
 					type: String,
 					required: [true, 'Student ID is Required']
 				},

@@ -1,6 +1,7 @@
 //[SECTION] Dependencies and Modules
 	const express = require('express');
 	const mongoose = require('mongoose');
+	const cors = require('cors');
 	const dotenv = require('dotenv');
 	const userRoutes = require('./routes/users');
 	const courseRoutes = require('./routes/courses');
@@ -13,6 +14,7 @@
 //[SECTION] Server Setup
 	const app = express();
 	app.use(express.json());
+	app.use(cors()) // it enables all origin/address/URL if the client request
 	
 //[SECTION] Database Connection
 	mongoose.connect(account)

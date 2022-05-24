@@ -30,7 +30,7 @@
 		},
 		enrollments: [
 			{
-				courseID: {
+				courseId: {
 					type: String,
 					required: [true, 'Subject ID is Required']
 				},

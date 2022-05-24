@@ -30,9 +30,13 @@ route.get('/details', auth.verify, (req, res) => {
 })
 
 
+//Enrole our register users
+//only the verified user can enroll in a course
+route.post('/enroll', auth.verify, controller.enroll);
 
 
-
+//Get logged user's enrollments
+route.get('/getEnrollments', auth.verify, controller.getEnrollments);
 
 
 
