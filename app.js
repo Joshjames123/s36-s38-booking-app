@@ -27,7 +27,7 @@
 
 //[SECTION] Server Gateway Respose
 	app.get('/', (req, res) => {
-		res.send('Welcome to Booking Course Application')
+		res.send('Welcome to Booking Course Application!')
 	});
 
 	app.listen(port, () => {
